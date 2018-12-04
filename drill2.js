@@ -59,9 +59,23 @@ const iceWarning = hazardWarningCreator('Bridge my ice in the cold');
 
 mountainWarning('Main st');
 
+let movements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, 4], [3, 2]];
 
-function steps (movement){
-    return movement.filter(mov => mov[0] >= 0 && mov[1] >= 0)
-}
+movements = movements.filter(movement => movement[0] >= 0 && movement[1] >= 0)
 
-steps([]);
+function steps (movement){ return movement.filter(mov => mov[0] >= 0 && mov[1] >= 0) }
+
+numOfSteps = movements.map(movement => movement[0] + movement[1]);
+
+numOfSteps.forEach(step => {console.log(step)});
+
+const input ='noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+const decoded = input.split(" ").reduce(function(decoStr, word){
+    if(word.length === 3){
+        return decoStr + (" ")
+    } else {
+        return decoStr + word[word.length -1].toUpperCase();
+    }
+})
+
+console.log(decoded);
