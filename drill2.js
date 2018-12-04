@@ -59,3 +59,9 @@ const iceWarning = hazardWarningCreator('Bridge my ice in the cold');
 
 mountainWarning('Main st');
 
+
+function steps (movement){
+    return movement.filter(mov => mov[0] >= 0 && mov[1] >= 0)
+}
+
+steps([]);
