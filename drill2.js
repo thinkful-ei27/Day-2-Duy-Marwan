@@ -59,3 +59,12 @@ const iceWarning = hazardWarningCreator('Bridge my ice in the cold');
 
 mountainWarning('Main st');
 
+let movements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, 4], [3, 2]];
+
+movements = movements.filter(movement => movement[0] >= 0 && movement[1] >= 0)
+
+function steps (movement){ return movement.filter(mov => mov[0] >= 0 && mov[1] >= 0) }
+
+numOfSteps = movements.map(movement => movement[0] + movement[1]);
+
+numOfSteps.forEach(step => {console.log(step)});
